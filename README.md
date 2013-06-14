@@ -1,4 +1,4 @@
-# common
+# clojure-common
 
 This project contains function definitions that are (hopefully) useful across all Clojure projects.  Currently, this consists of functions to read Java properties files and for handling unix time.
 
