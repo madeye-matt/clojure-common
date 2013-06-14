@@ -12,21 +12,21 @@ As it is a library project, common can not be executed directly. See the functio
 
 ## Examples
 
-com.madeye.clojure.common.common=> (load-props "test.properties")
+    com.madeye.clojure.common.common=> (load-props "test.properties")
 
-{:some.other.property "Another test value", :some.property "A test value"}
+    {:some.other.property "Another test value", :some.property "A test value"}
 
-com.madeye.clojure.common.common=> (current-unix-time)
+    com.madeye.clojure.common.common=> (current-unix-time)
 
-1371192804
+    1371192804
 
-com.madeye.clojure.common.common=> (to-unix-time (tm/now))
+    com.madeye.clojure.common.common=> (to-unix-time (tm/now))
 
-1371192824
+    1371192824
 
-com.madeye.clojure.common.common=> (from-unix-time 1261738182)
+    com.madeye.clojure.common.common=> (from-unix-time 1261738182)
 
-#<DateTime 2009-12-25T10:49:42.000Z>
+    #<DateTime 2009-12-25T10:49:42.000Z>
 
 ### Bugs
 
