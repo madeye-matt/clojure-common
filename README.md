@@ -4,7 +4,7 @@ This project contains function definitions that are (hopefully) useful across al
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from http://madeye.com/code/lib/clojure/common-0.1.0.jar
 
 ## Usage
 
