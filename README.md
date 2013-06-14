@@ -8,7 +8,7 @@ Download from http://madeye.com/code/lib/clojure/common-0.1.0.jar
 
 ## Usage
 
-As it is a library project, common can not be executed directly. See the function docs for information on how to use the supplied functions.
+As it is a library project, common can not be executed directly. See the function docs or the examples below for information on how to use the supplied functions.
 
 ## Examples
 
