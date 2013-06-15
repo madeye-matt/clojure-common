@@ -4,7 +4,17 @@ This project contains function definitions that are (hopefully) useful across al
 
 ## Installation
 
-Download from http://madeye.com/code/lib/clojure/common-0.1.0.jar
+leiningen
+
+    [com.madeye.clojure.common/common "0.1.0"]
+
+maven
+
+    <dependency>
+      <groupId>com.madeye.clojure.common</groupId>
+      <artifactId>common</artifactId>
+      <version>0.1.0</version>
+    </dependency>
 
 ## Usage
 
