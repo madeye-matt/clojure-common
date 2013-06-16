@@ -28,3 +28,16 @@
   "Function to convert a Unix time into a DateTime object"
   [s] 
   (tm/plus (tm/epoch) (tm/secs s)))
+
+(defn count-record [v] { :term (first v) :count (count (second v))})
+
+(defn compare-count-map-desc 
+    [m1 m2]
+    (compare (:count m2) (:count m1))
+)
+
+(defn compare-count-map-asc 
+    [m1 m2]
+    (compare (:count m1) (:count m2))
+)
+
