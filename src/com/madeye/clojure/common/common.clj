@@ -41,3 +41,15 @@
     (compare (:count m1) (:count m2))
 )
 
+(defn get-date-range 
+  "Gets a date range for a predetermined period of time - currently defined :last_week, :last_month, :all_time.  Returns a map with :start and :end defined"
+  [per]
+  (case per
+    :last_week
+      { :start (tm/minus (tm/now) (tm/weeks 1)) :end (tm/now) }
+    :last_month
+      { :start (tm/minus (tm/now) (tm/months 1)) :end (tm/now) }
+    :all_time
+      { :start (tm/date-time 2000 1 1) :end (tm/now) }
+  )
+)
