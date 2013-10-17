@@ -53,3 +53,13 @@
       { :start (tm/date-time 2000 1 1) :end (tm/now) }
   )
 )
+
+(defn parse-float
+  "Function to parse a float string, return 0 if nil"
+  [value]
+  (if (empty? value)
+    0
+    (Float. value)
+  )
+)
+
