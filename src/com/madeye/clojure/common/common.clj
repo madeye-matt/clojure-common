@@ -5,6 +5,7 @@
 (require '[clj-time.core :as tm])
 (require '[clj-time.local :as tloc])
 (require '[clj-time.format :as tfmt])
+(require '[clojure.string :as str])
 
 (defn load-props
   "Function to load a Java-style Properties file into a Clojure map"
@@ -61,5 +62,33 @@
     0
     (Float. value)
   )
+)
+
+(defn build-map
+  [headings data]
+  (loop [cnt 0
+         result {}]
+    (if (< cnt (count headings))
+      (recur (inc cnt) (assoc result (keyword (get headings cnt)) (get data cnt)))
+      result
+    )
+  )
+)
+
+(defn split-row
+  [row delimiter]
+  (str/split row delimiter)
+)
+
+(defn parse-delimited-string
+  [string delimiter]
+  (let [parsed-data (map #(split-row % delimiter) (str/split string #"\n"))]
+    (map (partial build-map (first parsed-data)) (rest parsed-data))
+  )
+)
+
+(defn parse-delimited-file
+  [filename delimiter]
+  (-> filename slurp (parse-delimited-string (re-pattern (str "[" delimiter "]"))))
 )
 

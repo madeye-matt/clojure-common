@@ -6,7 +6,7 @@ This project contains function definitions that are (hopefully) useful across al
 
 leiningen
 
-    [com.madeye.clojure.common/common "0.1.3"]
+    [com.madeye.clojure.common/common "0.1.5"]
 
 maven
 
