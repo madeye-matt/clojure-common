@@ -3,7 +3,7 @@
   <groupId>com.madeye.clojure.common</groupId>
   <artifactId>common</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.5</version>
+  <version>0.1.6</version>
   <name>common</name>
   <description>Common utility code to be shared between clojure projects</description>
   <url>https://github.com/madeye-matt/clojure-common</url>
@@ -16,7 +16,7 @@
   <scm>
     <connection>scm:git:git://github.com/madeye-matt/clojure-common.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/madeye-matt/clojure-common.git</developerConnection>
-    <tag>084d4dfcedaf2d23a3587574131366a3b8145a8a</tag>
+    <tag>cf3996b42968e11ef44ff08fd5d0e0d39f59f70d</tag>
     <url>https://github.com/madeye-matt/clojure-common</url>
   </scm>
   <build>
@@ -69,7 +69,7 @@
     <dependency>
       <groupId>clj-time</groupId>
       <artifactId>clj-time</artifactId>
-      <version>0.5.0</version>
+      <version>0.6.0</version>
     </dependency>
   </dependencies>
 </project>
