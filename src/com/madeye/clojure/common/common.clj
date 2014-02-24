@@ -18,7 +18,7 @@
 (defn to-unix-time 
   "Function to turn a DateTime object into Unix time"
   [t] 
-  (tm/in-secs (tm/interval (tm/epoch) t)))
+  (tm/in-seconds (tm/interval (tm/epoch) t)))
 
 (defn current-unix-time 
   "Function to get the current time in Unix time"
