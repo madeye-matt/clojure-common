@@ -92,3 +92,25 @@
   (-> filename slurp (parse-delimited-string (re-pattern (str "[" delimiter "]"))))
 )
 
+(defn convert-string-keys-to-keywords
+  [obj]
+  (if (map? obj)
+    (loop [remaining obj result {}]
+     (let [head (first remaining)
+           tail (rest remaining)]
+        (if (not (empty? remaining))
+          (let [mkey (keyword (key head))
+                mval (convert-string-keys-to-keywords (val head))]
+            (recur tail (assoc result mkey mval))
+          )
+          result
+        )
+      )
+    )
+    (if (coll? obj)
+      (map convert-string-keys-to-keywords obj)
+      obj
+    )
+  )
+)
+
