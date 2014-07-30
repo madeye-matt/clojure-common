@@ -10,10 +10,16 @@
 (defn load-props
   "Function to load a Java-style Properties file into a Clojure map"
   [file-name]
-  (with-open [^java.io.Reader reader (clojure.java.io/reader file-name)] 
-      (let [props (java.util.Properties.)]
-          (.load props reader)
-          (into {} (for [[k v] props] [(keyword k) v])))))
+  (let [props (java.util.Properties.)]
+    (if (and (not (nil? file-name)) (> (count file-name) 0))
+      (with-open [^java.io.Reader reader (clojure.java.io/reader file-name)] 
+        (.load props reader)
+        (into {} (for [[k v] props] [(keyword k) v]))
+      )
+    )
+    props
+  )
+)
 
 (defn to-unix-time 
   "Function to turn a DateTime object into Unix time"
