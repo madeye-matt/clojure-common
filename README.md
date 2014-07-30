@@ -6,18 +6,18 @@ This project contains function definitions that are (hopefully) useful across al
 
 leiningen
 
-    [com.madeye.clojure.common/common "0.1.7"]
+    [com.madeye.clojure.common/common "0.1.8]
 
 gradle
 
-    compile "com.madeye.clojure.common:common:0.1.7"
+    compile "com.madeye.clojure.common:common:0.1.8"
 
 maven
 
     <dependency>
       <groupId>com.madeye.clojure.common</groupId>
       <artifactId>common</artifactId>
-      <version>0.1.7</version>
+      <version>0.1.8</version>
     </dependency>
 
 ## Usage
@@ -44,6 +44,6 @@ None identified so far
 
 ## License
 
-Copyright © 2013 Madeye Software Ltd.
+Copyright © 2013-2014 Madeye Software Ltd.
 
 Distributed under the Eclipse Public License, the same as Clojure.

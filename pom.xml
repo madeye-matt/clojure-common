@@ -3,7 +3,7 @@
   <groupId>com.madeye.clojure.common</groupId>
   <artifactId>common</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.7</version>
+  <version>0.1.8</version>
   <name>common</name>
   <description>Common utility code to be shared between clojure projects</description>
   <url>https://github.com/madeye-matt/clojure-common</url>
@@ -16,7 +16,8 @@
   <scm>
     <connection>scm:git:git://github.com/madeye-matt/clojure-common.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/madeye-matt/clojure-common.git</developerConnection>
-    <tag>dfc8430d07aeac12e9db0a9f6800b17383dd0fec</tag>
+    <tag>10023b4f839aed2561130038b20b106ddbe58735
+</tag>
     <url>https://github.com/madeye-matt/clojure-common</url>
   </scm>
   <build>
@@ -37,6 +38,7 @@
     </testResources>
     <directory>target</directory>
     <outputDirectory>target/classes</outputDirectory>
+    <plugins/>
   </build>
   <repositories>
     <repository>
@@ -70,6 +72,30 @@
       <groupId>clj-time</groupId>
       <artifactId>clj-time</artifactId>
       <version>0.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>tools.nrepl</artifactId>
+      <version>0.2.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.clojure</groupId>
+          <artifactId>clojure</artifactId>
+        </exclusion>
+      </exclusions>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>clojure-complete</groupId>
+      <artifactId>clojure-complete</artifactId>
+      <version>0.2.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.clojure</groupId>
+          <artifactId>clojure</artifactId>
+        </exclusion>
+      </exclusions>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>
