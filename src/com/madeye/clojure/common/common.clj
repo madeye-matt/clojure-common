@@ -14,10 +14,9 @@
     (if (and (not (nil? file-name)) (> (count file-name) 0))
       (with-open [^java.io.Reader reader (clojure.java.io/reader file-name)] 
         (.load props reader)
-        (into {} (for [[k v] props] [(keyword k) v]))
       )
     )
-    props
+    (into {} (for [[k v] props] [(keyword k) v]))
   )
 )
 
