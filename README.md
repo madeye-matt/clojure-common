@@ -6,18 +6,18 @@ This project contains function definitions that are (hopefully) useful across al
 
 leiningen
 
-    [com.madeye.clojure.common/common "0.2.0]
+    [com.madeye.clojure.common/common "0.2.1]
 
 gradle
 
-    compile "com.madeye.clojure.common:common:0.2.0"
+    compile "com.madeye.clojure.common:common:0.2.1"
 
 maven
 
     <dependency>
       <groupId>com.madeye.clojure.common</groupId>
       <artifactId>common</artifactId>
-      <version>0.2.0</version>
+      <version>0.2.1</version>
     </dependency>
 
 ## Usage
