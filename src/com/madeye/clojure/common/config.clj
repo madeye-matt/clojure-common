@@ -26,6 +26,17 @@
   )
 )
 
+(defn get-all-properties
+  []
+  (get-property)
+)
+
+(defn get-obj-property
+  ([item]
+    (read-string (get-property item))
+  )
+)
+
 (defn set-property
 	[item-name-kw item-value]
 	(swap! global-config assoc item-name-kw item-value)
