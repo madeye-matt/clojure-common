@@ -3,7 +3,7 @@
   <groupId>com.madeye.clojure.common</groupId>
   <artifactId>common</artifactId>
   <packaging>jar</packaging>
-  <version>0.2.1</version>
+  <version>0.2.2</version>
   <name>common</name>
   <description>Common utility code to be shared between clojure projects</description>
   <url>https://github.com/madeye-matt/clojure-common</url>
@@ -16,7 +16,7 @@
   <scm>
     <connection>scm:git:git://github.com/madeye-matt/clojure-common.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/madeye-matt/clojure-common.git</developerConnection>
-    <tag>09768e8c136713b15f1fe382c92a1a11157b260c</tag>
+    <tag>6ee354a0055e3e8c7abeaaa26fd10e702d8f7428</tag>
     <url>https://github.com/madeye-matt/clojure-common</url>
   </scm>
   <build>
