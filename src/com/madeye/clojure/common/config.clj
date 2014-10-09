@@ -12,9 +12,15 @@
 
 (defn load-config
 	[config-filename]
-	(let [config (c/load-props config-filename)]
-		(swap! global-config merge config)
-	)
+  (if (empty? config-filename)
+    (throw (ex-info "No config file supplied" {}))
+    (if (not (.exists (clojure.java.io/as-file config-filename)))
+      (throw (ex-info (str "Config file " config-filename " not found") {}))
+	    (let [config (c/load-props config-filename)]
+    		(swap! global-config merge config)
+    	)
+    )
+  )
 )
 
 (defn get-property
