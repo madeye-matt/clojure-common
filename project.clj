@@ -7,5 +7,5 @@
                  [org.clojure/clojure "1.6.0"]
                  [clj-time "0.8.0"]
   ]
-  :main com.madeye.clojure.common.config
+  :main com.madeye.clojure.common.collection
 )
