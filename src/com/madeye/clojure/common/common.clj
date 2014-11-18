@@ -119,3 +119,8 @@
   )
 )
 
+(defn in? 
+  "true if seq contains elm - thanks to http://stackoverflow.com/a/3249777/2139018"
+  [seq elm]  
+  (some #(= elm %) seq)
+)
