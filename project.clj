@@ -1,4 +1,4 @@
-(defproject com.madeye.clojure.common/common "0.2.4"
+(defproject com.madeye.clojure.common/common "0.2.5-SNAPSHOT"
   :description "Common utility code to be shared between clojure projects"
   :url "https://github.com/madeye-matt/clojure-common"
   :license {:name "Eclipse Public License"
