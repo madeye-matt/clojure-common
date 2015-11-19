@@ -12,7 +12,7 @@
   [file-name]
   (let [props (java.util.Properties.)]
     (if (and (not (nil? file-name)) (> (count file-name) 0))
-      (with-open [^java.io.Reader reader (clojure.java.io/reader file-name)] 
+      (with-open [^java.io.Reader reader (clojure.java.io/reader file-name)]
         (.load props reader)
       )
     )
@@ -20,34 +20,34 @@
   )
 )
 
-(defn to-unix-time 
+(defn to-unix-time
   "Function to turn a DateTime object into Unix time"
-  [t] 
+  [t]
   (tm/in-seconds (tm/interval (tm/epoch) t)))
 
-(defn current-unix-time 
+(defn current-unix-time
   "Function to get the current time in Unix time"
-  [] 
+  []
   (to-unix-time (tm/now)))
 
-(defn from-unix-time 
+(defn from-unix-time
   "Function to convert a Unix time into a DateTime object"
-  [s] 
+  [s]
   (tm/plus (tm/epoch) (tm/secs s)))
 
 (defn count-record [v] { :term (first v) :count (count (second v))})
 
-(defn compare-count-map-desc 
+(defn compare-count-map-desc
     [m1 m2]
     (compare (:count m2) (:count m1))
 )
 
-(defn compare-count-map-asc 
+(defn compare-count-map-asc
     [m1 m2]
     (compare (:count m1) (:count m2))
 )
 
-(defn get-date-range 
+(defn get-date-range
   "Gets a date range for a predetermined period of time - currently defined :last_week, :last_month, :all_time.  Returns a map with :start and :end defined"
   [per]
   (case per
@@ -69,12 +69,12 @@
   )
 )
 
-(defn build-map
-  [headings data]
+(defn- build-map
+  [keygen-fn headings data]
   (loop [cnt 0
          result {}]
     (if (< cnt (count headings))
-      (recur (inc cnt) (assoc result (keyword (get headings cnt)) (get data cnt)))
+      (recur (inc cnt) (assoc result (keyword (keygen-fn (get headings cnt))) (get data cnt)))
       result
     )
   )
@@ -85,10 +85,20 @@
   (str/split row delimiter)
 )
 
+(defn- convert-spaces-to-underscores
+  [str]
+  (str/replace str #" " "_")
+)
+
 (defn parse-delimited-string
-  [string delimiter]
-  (let [parsed-data (map #(split-row % delimiter) (str/split string #"\n"))]
-    (map (partial build-map (first parsed-data)) (rest parsed-data))
+  ([string delimiter spaces-to-underscores]
+    (let [keygen-fn (if spaces-to-underscores convert-spaces-to-underscores identity)
+          parsed-data (map #(split-row % delimiter) (str/split string #"\n"))]
+      (map (partial build-map keygen-fn (first parsed-data)) (rest parsed-data))
+    )
+  )
+  ([string delimiter]
+    (parse-delimited-string string delimiter true)
   )
 )
 
@@ -119,8 +129,8 @@
   )
 )
 
-(defn in? 
+(defn in?
   "true if seq contains elm - thanks to http://stackoverflow.com/a/3249777/2139018"
-  [seq elm]  
+  [seq elm]
   (some #(= elm %) seq)
 )
