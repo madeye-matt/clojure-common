@@ -1,7 +1,7 @@
 (ns com.madeye.clojure.common.config
   "Simple class to wrap a Properties file into an atom"
   (:gen-class)
-  (:require 
+  (:require
   	[com.madeye.clojure.common.common :as c]
   )
 )
@@ -46,6 +46,12 @@
 (defn set-property
 	[item-name-kw item-value]
 	(swap! global-config assoc item-name-kw item-value)
+)
+
+(defn merge-map
+  [m]
+  (dorun (map #(set-property (key %) (val %)) m))
+  (get-all-properties)
 )
 
 (defn save-config
